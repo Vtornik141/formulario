@@ -4,7 +4,7 @@ import { PAQUETES } from "../../brief/constants";
 import type { BriefData } from "../../brief/types";
 
 // Cambia esta dirección por el correo donde quieres recibir los briefs.
-const DESTINATION_EMAIL = "hola@ceibavisual.com";
+const DESTINATION_EMAIL = "heltonyahel890@gmail.com";
 const FROM_EMAIL = "Ceiba Visual <onboarding@resend.dev>";
 
 type BriefPayload = BriefData & { enviadoEn: string };
