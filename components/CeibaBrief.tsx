@@ -158,9 +158,6 @@ export function CeibaBrief({ embedded = false }: CeibaBriefProps) {
             transition={transition}
             className={`${screenHeight} flex items-center justify-center p-6 relative overflow-hidden`}
           >
-            <div className="absolute top-8 right-8">
-              <CeibaMark size={200} color="var(--color-musgo)" className="opacity-[0.06]" />
-            </div>
             <div className="max-w-lg w-full relative">
               <div className="text-xs tracking-[0.3em] uppercase mb-5 text-musgo">
                 Ceiba Visual · Brief de proyecto
@@ -289,6 +286,19 @@ export function CeibaBrief({ embedded = false }: CeibaBriefProps) {
                           placeholder="Ej. 1"
                         />
                       </Field>
+                      {Number(data.sucursales) > 2 && (
+                        <Field
+                          label="Ubicación exacta de tus sucursales"
+                          hint="Indícanos la dirección o zona de cada una."
+                        >
+                          <TextArea
+                            value={data.ubicacionSucursales}
+                            onChange={(e) => set("ubicacionSucursales", e.target.value)}
+                            rows={5}
+                            placeholder="Ej. Sucursal 1: Zona 10, Ciudad de Guatemala / Sucursal 2: ..."
+                          />
+                        </Field>
+                      )}
                     </>
                   )}
 
@@ -314,22 +324,13 @@ export function CeibaBrief({ embedded = false }: CeibaBriefProps) {
                           placeholder="Por qué un cliente los elige a ustedes y no a otro..."
                         />
                       </Field>
-                      <div className="grid sm:grid-cols-2 gap-x-4">
-                        <Field label="¿Hace cuánto operan?">
-                          <TextInput
-                            value={data.antiguedad}
-                            onChange={(e) => set("antiguedad", e.target.value)}
-                            placeholder="Ej. 5 años"
-                          />
-                        </Field>
-                        <Field label="¿Quién es tu cliente ideal?">
-                          <TextInput
-                            value={data.clienteIdeal}
-                            onChange={(e) => set("clienteIdeal", e.target.value)}
-                            placeholder="A quién le venden"
-                          />
-                        </Field>
-                      </div>
+                      <Field label="¿Hace cuánto operan?">
+                        <TextInput
+                          value={data.antiguedad}
+                          onChange={(e) => set("antiguedad", e.target.value)}
+                          placeholder="Ej. 5 años"
+                        />
+                      </Field>
                     </>
                   )}
 

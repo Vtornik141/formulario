@@ -6,11 +6,11 @@ export type BriefData = {
   correo: string;
   ubicacion: string;
   sucursales: string;
+  ubicacionSucursales: string;
   // negocio
   descripcion: string;
   antiguedad: string;
   diferenciador: string;
-  clienteIdeal: string;
   // paquete
   paquete: string;
   // marca

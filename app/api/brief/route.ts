@@ -50,12 +50,12 @@ function buildHtml(payload: BriefPayload) {
         ${row("Correo", payload.correo)}
         ${row("Ubicación", payload.ubicacion)}
         ${row("Sucursales", payload.sucursales)}
+        ${row("Ubicación de sucursales", payload.ubicacionSucursales)}
 
         ${section("El negocio")}
         ${row("Descripción", payload.descripcion)}
         ${row("Diferenciador", payload.diferenciador)}
         ${row("Antigüedad", payload.antiguedad)}
-        ${row("Cliente ideal", payload.clienteIdeal)}
 
         ${section("Paquete")}
         ${row("Paquete de interés", nombrePaquete(payload.paquete))}
@@ -85,12 +85,12 @@ function buildText(payload: BriefPayload) {
     `Correo: ${payload.correo}`,
     `Ubicación: ${payload.ubicacion}`,
     `Sucursales: ${payload.sucursales}`,
+    `Ubicación de sucursales: ${payload.ubicacionSucursales}`,
     "",
     "— El negocio —",
     `Descripción: ${payload.descripcion}`,
     `Diferenciador: ${payload.diferenciador}`,
     `Antigüedad: ${payload.antiguedad}`,
-    `Cliente ideal: ${payload.clienteIdeal}`,
     "",
     "— Paquete —",
     `Paquete de interés: ${nombrePaquete(payload.paquete)}`,
